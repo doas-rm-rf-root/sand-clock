@@ -3,3 +3,5 @@ imgui*
 __pycache__/
 .venv/
 .vscode/
+poetry.lock
+.DS_Store
