@@ -5,7 +5,7 @@ A falling sand simulation that creates a visual hourglass timer using cellular a
 ## Installation
 
 ```bash
-pipx install git+https://github.com/yourusername/sand-clock.git
+pipx install git+https://github.com/doas-rm-rf-root/sand-clock.git@main
 ```
 
 ## Usage
