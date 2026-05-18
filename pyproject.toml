@@ -3,7 +3,9 @@ name = "sand-clock"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Aslanian Ivan",email = "aslanian.ivan@knu.ua"}
+    {name = "Aslanian Ivan", email = "aslanian.ivan@knu.ua"},
+    {name = "Rudyk Kyryl", email = "krudyk@knu.ua"},
+    {name = "Sorochenko Nazar", email = "sorochenko.n.s@knu.ua"}
 ]
 readme = "README.md"
 requires-python = ">=3.12, <4.0"
