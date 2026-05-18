@@ -1,0 +1,15 @@
+AIR = 0
+SAND = 1
+BLOCK = 2
+
+W = 300
+H = 300
+
+SAND_COLOR = [0.90, 0.75, 0.45]
+AIR_COLOR = [0.10, 0.12, 0.18]
+BLOCK_COLOR = [1.0, 0.75, 0.8]
+
+IMAGE_NAME = "clock.png"
+
+TARGET_FPS = 60
+FRAME_DURATION = 1.0 / TARGET_FPS

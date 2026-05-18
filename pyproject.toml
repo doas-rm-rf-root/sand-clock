@@ -1,0 +1,24 @@
+[project]
+name = "sand-clock"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Aslanian Ivan",email = "aslanian.ivan@knu.ua"}
+]
+readme = "README.md"
+requires-python = ">=3.13, <4.0"
+dependencies = [
+    "taichi (>=1.7.4,<2.0.0)",
+    "pillow (>=12.2.0,<13.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "sand_clock", from = "src"}]
+include = ["src/sand_clock/assets/*.png"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+sand = "sand_clock.main:main"
