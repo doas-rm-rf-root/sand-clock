@@ -6,6 +6,7 @@ import time
 
 from sand_clock.clock_decoder import load_clock
 from sand_clock.consts import *
+from sand_clock.sand_spawner import spawn_particles
 
 taichi.init(arch=taichi.cpu)
 
@@ -15,7 +16,7 @@ image = taichi.Vector.field(3, dtype=taichi.f32, shape=(W, H))
 frame_counter = 0
 
 @taichi.kernel
-def update(frame_idx: taichi.i32):
+def update(frame_idx: int):
     for _ in range(1):
         for y in range(1, H):
             
@@ -64,7 +65,7 @@ def run_window():
     global grid
     grid.copy_from(load_clock())
     
-    spawn_test_sand(grid)
+    spawn_particles(1000, grid)
 
     while window.running:
         frame_start = time.perf_counter()
