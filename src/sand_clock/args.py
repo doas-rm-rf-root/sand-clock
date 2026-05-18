@@ -8,7 +8,7 @@ def parse():
         'number',
         type=int,
         nargs='?',
-        default=15,
+        default=1,
         help="Number of timed minuted"
     )
 

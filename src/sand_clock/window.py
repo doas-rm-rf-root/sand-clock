@@ -7,6 +7,7 @@ import time
 from sand_clock.clock_decoder import load_clock
 from sand_clock.consts import *
 from sand_clock.sand_spawner import spawn_particles
+from sand_clock.particle_calculation import calculate_target_fps
 
 taichi.init(arch=taichi.cpu)
 
@@ -57,7 +58,7 @@ def render():
         elif grid[x, y] == BLOCK:
             image[x, y] = taichi.Vector(BLOCK_COLOR)
 
-def run_window():
+def run_window(minutes: int):
     global frame_counter
     window = taichi.ui.Window("Sand clock", (600, 600), vsync=False)
     canvas = window.get_canvas()
@@ -65,7 +66,11 @@ def run_window():
     global grid
     grid.copy_from(load_clock())
     
-    spawn_particles(1000, grid)
+    spawn_particles(MAX_PARTICLES, grid)
+
+    frame_duration = 1.0 / calculate_target_fps(minutes) 
+
+    print(frame_duration)
 
     while window.running:
         frame_start = time.perf_counter()
@@ -78,7 +83,7 @@ def run_window():
         window.show()
 
         elapsed = time.perf_counter() - frame_start
-        sleep_time = FRAME_DURATION - elapsed
+        sleep_time = frame_duration - elapsed
 
         if sleep_time > 0:
             time.sleep(sleep_time)

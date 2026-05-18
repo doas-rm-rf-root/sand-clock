@@ -3,16 +3,19 @@ from sand_clock.consts import *
 # With planned calculations with set maximum particles N is kinda semi-useless
 def spawn_particles(n, grid):
     cx = W // 2
-    cap_y = None 
+
+    # cap_y = None 
     
-    for y_check in range(H // 2, H):
-        if cap_y == None: 
-            if grid[cx, y_check] == BLOCK:
-                cap_y = y_check - 1
+    # for y_check in range(H // 2, H):
+    #     if cap_y == None: 
+    #         if grid[cx, y_check] == BLOCK:
+    #             cap_y = y_check - 1
 
-    vertical_span = (H // 2) - cap_y
+    # vertical_span = (H // 2) - cap_y
 
-    circle_center = cap_y + int(vertical_span * 0.4)
+    # circle_center = cap_y + int(vertical_span * 0.4)
+
+    circle_center = H - SAND_SPAWN_Y
 
     spawned_count = 0
 
@@ -28,4 +31,7 @@ def spawn_particles(n, grid):
                         grid[x, y] = SAND
                         spawned_count += 1 
 
-    print(f"Spawned: {spawned_count}")
+    if MAX_PARTICLES > spawned_count:
+        raise ValueError("The pipeline is fragile and broken because less than MAX_PARTICLES has been spawned, recheck the spawning parameters!")
+
+    print(f"Spawned: {spawned_count} particles")

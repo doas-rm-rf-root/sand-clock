@@ -4,4 +4,4 @@ from sand_clock.args import parse
 
 def main():
     t = parse()
-    run_window()
+    run_window(t)

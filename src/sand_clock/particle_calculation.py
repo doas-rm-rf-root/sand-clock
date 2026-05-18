@@ -1,12 +1,9 @@
-from consts import NECK_WIDTH
+from sand_clock.consts import NECK_WIDTH, MAX_PARTICLES
 
-def calculate_target_fps(particles, minutes):
+def calculate_target_fps(minutes):
+    particles_per_frame = NECK_WIDTH
 
-    efficiency = 0.55
-
-    particles_per_frame = NECK_WIDTH * efficiency
-
-    total_frames_needed = particles / particles_per_frame
+    total_frames_needed = MAX_PARTICLES / particles_per_frame
 
     target_seconds = minutes * 60
 

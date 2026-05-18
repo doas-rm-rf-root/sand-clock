@@ -14,11 +14,12 @@ def load_clock() -> numpy.array:
 
     array = numpy.array(image)
 
-    alpha = array[:, :, 3]
+    alpha = array[:, :, 3].transpose()
+    alpha = alpha[:, ::-1]
 
-    for y in range(H):
-        for x in range(W):
-            if alpha[y, x] > 0:
+    for x in range(H):
+        for y in range(W):
+            if alpha[x, y] > 0:
                 grid[x, y] = BLOCK
     
     return grid 
