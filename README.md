@@ -4,6 +4,8 @@ A falling sand simulation that creates a visual hourglass timer using cellular a
 
 ## Installation
 
+Install [pipx](https://pipx.pypa.io/stable/how-to/install-pipx/)
+
 ```bash
 pipx install git+https://github.com/doas-rm-rf-root/sand-clock.git@main
 ```
