@@ -6,7 +6,7 @@ authors = [
     {name = "Aslanian Ivan",email = "aslanian.ivan@knu.ua"}
 ]
 readme = "README.md"
-requires-python = ">=3.13, <4.0"
+requires-python = ">=3.12, <4.0"
 dependencies = [
     "taichi (>=1.7.4,<2.0.0)",
     "pillow (>=12.2.0,<13.0.0)"
